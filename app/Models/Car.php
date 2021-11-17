@@ -13,5 +13,5 @@ class Car extends Model
 
     protected $primaryKey = 'id';
 
-    public $timestamps = true;
+    protected $fillable = ['name', 'founded', 'description'];
 }

@@ -42,7 +42,21 @@ class CarsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'founded' => 'required|integer|min:0|max:2022',
+            'description' => 'required',
+        ]);
+
+        // ::make could be used instead of 
+        // ::create however you'd need to use $car->save() at the end
+        $car = Car::create([
+            'name' => $request->input('name'),
+            'founded' => $request->input('founded'),
+            'description' => $request->input('description'),
+        ]);
+
+        return redirect('/cars');
     }
 
     /**
@@ -64,7 +78,9 @@ class CarsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $car = Car::find($id)->first();
+
+        return view('cars.edit')->with('car', $car);
     }
 
     /**
