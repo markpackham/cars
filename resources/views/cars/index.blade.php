@@ -19,6 +19,14 @@
                         <a class="border-b-2 pb-2 border-dotted italic text-green-500" href="cars/{{ $car->id }}/edit">
                             Edit &rarr;
                         </a>
+
+                        <form action="/cars/{{ $car->id }}" class="pt-3" method="POST">
+                            @csrf
+                            @method('delete')
+                            <button type="submit" class="border-b-2 pb-2 border-dotted italic text-red-500">
+                                Delete &rarr;
+                            </button>
+                        </form>
                     </div>
                     <span class="uppercase text-blue-500 font-bold text-xs italic">
                         Founded: {{ $car->founded }}
