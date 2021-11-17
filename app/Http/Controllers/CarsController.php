@@ -15,7 +15,10 @@ class CarsController extends Controller
     public function index()
     {
         // simular to SELECT * FROM cars
-        $cars = Car::all();
+        $cars = Car::where('id', '>', '0')->get();
+
+        // print_r($cars->count());
+
         return view('cars.index', [
             'cars' => $cars
         ]);
@@ -28,7 +31,7 @@ class CarsController extends Controller
      */
     public function create()
     {
-        //
+        return view('cars.create');
     }
 
     /**
