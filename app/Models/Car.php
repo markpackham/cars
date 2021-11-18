@@ -20,4 +20,10 @@ class Car extends Model
 
     // visable is used for white listing items, handy if outputting Json for APIs
     // protected $visable = ['name', 'founded', 'description'];
+
+    // setupt relationship method with Car model
+    public function carModels()
+    {
+        return $this->hasMany(CarModel::class);
+    }
 }
