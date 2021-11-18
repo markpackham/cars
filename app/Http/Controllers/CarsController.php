@@ -7,6 +7,13 @@ use App\Models\Car;
 
 class CarsController extends Controller
 {
+
+    // Redirect anyone who visits the root to the cars homepage
+    public function homeRedirect()
+    {
+        return redirect('/cars');
+    }
+
     /**
      * Display a listing of the resource.
      *
