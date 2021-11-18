@@ -37,4 +37,12 @@ class Car extends Model
             'model_id', // Foreign key on Engine table
         );
     }
+
+    // Many to Many relationship
+    public function products()
+    {
+        return $this->belongsToMany(
+            Product::class,
+        );
+    }
 }

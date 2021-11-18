@@ -42,7 +42,7 @@
                             <td class="border-4 border-gray-500">
                                 @foreach ($car->engines as $engine)
                                     @if ($model->id == $engine->model_id)
-                                        {{ $engine->engine_name }}
+                                        {{ $engine->engine_name }},
                                     @endif
                                 @endforeach
                             </td>
@@ -58,7 +58,14 @@
                     @endforelse
                 </table>
 
-
+                <p class="text-left">
+                    Product types:
+                    @forelse ($car->products as $product)
+                        {{ $product->name }},
+                    @empty
+                        <p>No car product descriptions!</p>
+                    @endforelse
+                </p>
                 <hr class="mt-4 mb-8">
             </div>
         </div>
