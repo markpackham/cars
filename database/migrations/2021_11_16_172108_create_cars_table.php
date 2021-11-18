@@ -20,6 +20,16 @@ class CreateCarsTable extends Migration
             $table->longText('description');
             $table->timestamps();
         });
+
+        Schema::create('car_models', function (Blueprint $table) {
+            $table->increments('id');
+            $table->unsignedInteger('car_id');
+            $table->foreign('car_id')->references('id')->on('cars')->onDelete('cascade');
+            // alternative option if you don't want a cascading deletion effect
+            // $table->foreign('car_id')->references('id')->on('cars')->onDelete('set_null');
+            $table->string('model_name');
+            $table->timestamps();
+        });
     }
 
     /**
