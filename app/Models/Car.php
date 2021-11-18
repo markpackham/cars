@@ -27,7 +27,7 @@ class Car extends Model
         return $this->hasMany(CarModel::class);
     }
 
-    // define has many through relationship (a Many To Many)
+    // define has many through relationship (a One To Many)
     public function engines()
     {
         return $this->hasManyThrough(

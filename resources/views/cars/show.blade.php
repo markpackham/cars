@@ -48,7 +48,7 @@
                             </td>
 
                             <td class="border-4 border-gray-500">
-                                {{ date('d-m-Y', strtotime($car->productionDate->created_at)) }}
+                                {{ date('d-m-Y', strtotime($model->productionDate->created_at)) }}
                             </td>
                         </tr>
                     @empty

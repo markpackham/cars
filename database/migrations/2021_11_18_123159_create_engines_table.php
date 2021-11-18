@@ -16,9 +16,9 @@ class CreateEnginesTable extends Migration
         Schema::create('engines', function (Blueprint $table) {
             $table->id('id');
             $table->unsignedInteger('model_id');
+            $table->foreign('model_id')->references('id')->on('car_models')->onDelete('cascade');
             $table->string('engine_name');
             $table->timestamps();
-            $table->foreign('model_id')->references('id')->on('car_models')->onDelete('cascade');
         });
     }
 
