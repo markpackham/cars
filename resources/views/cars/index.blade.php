@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@foreach ($cars as $car)
+    {{ $car->name }}
+@endforeach
+
 @section('content')
     <div class="m-auto w-4/5 py-24">
         <div class="text-center">
@@ -16,11 +20,11 @@
             @foreach ($cars as $car)
                 <div class="m-auto">
                     <div class="float-right">
-                        <a class="border-b-2 pb-2 border-dotted italic text-green-500" href="cars/{{ $car->id }}/edit">
+                        <a class="border-b-2 pb-2 border-dotted italic text-green-500" href="cars//edit">
                             Edit &rarr;
                         </a>
 
-                        <form action="/cars/{{ $car->id }}" class="pt-3" method="POST">
+                        <form action="/cars/" class="pt-3" method="POST">
                             @csrf
                             @method('delete')
                             <button type="submit" class="border-b-2 pb-2 border-dotted italic text-red-500">
@@ -29,13 +33,11 @@
                         </form>
                     </div>
                     <span class="uppercase text-blue-500 font-bold text-xs italic">
-                        Founded: {{ $car->founded }}
+                        Founded:
                     </span>
                     <h2 class="text-gray-700 text-5xl">
-                        {{ $car->name }}
                     </h2>
                     <p class="text-lg text-gray-700 py-6">
-                        {{ $car->description }}
                     </p>
                     <hr class="mt-4 mb-8">
                 </div>

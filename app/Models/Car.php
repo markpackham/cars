@@ -14,4 +14,10 @@ class Car extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = ['name', 'founded', 'description'];
+
+    // hidden is good for hidding session data and passwords
+    // protected $hidden = ['update_at'];
+
+    // visable is used for white listing items, handy if outputting Json for APIs
+    // protected $visable = ['name', 'founded', 'description'];
 }

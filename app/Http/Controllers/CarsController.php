@@ -15,7 +15,8 @@ class CarsController extends Controller
     public function index()
     {
         // simular to SELECT * FROM cars
-        $cars = Car::where('id', '>', '0')->get();
+        $cars = Car::all()->toJson();
+        $cars = json_decode($cars);
 
         // print_r($cars->count());
 
@@ -67,7 +68,6 @@ class CarsController extends Controller
      */
     public function show($id)
     {
-        //
     }
 
     /**
