@@ -77,6 +77,8 @@ class CarsController extends Controller
         // avoid duplicate image names uploaded
         $newImageName = time() . '-' . $request->name . '.' . $request->image->extension();
 
+        $request->image->move(public_path('images'), $newImageName);
+
         // $request->validate([
         //     'name' => 'required|unique:cars',
         //     'name' => new Uppercase,
@@ -90,6 +92,7 @@ class CarsController extends Controller
             'name' => $request->input('name'),
             'founded' => $request->input('founded'),
             'description' => $request->input('description'),
+            'image_path' => $newImageName,
         ]);
 
         return redirect('/cars');

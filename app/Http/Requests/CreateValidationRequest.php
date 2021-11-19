@@ -25,7 +25,7 @@ class CreateValidationRequest extends FormRequest
     {
         // max size for the image is in kilobytes
         return [
-            'image' => 'mimes:jpg,png,jpeg|max:5048',
+            'image' => 'required|mimes:jpg,png,jpeg|max:5048',
             'name' => 'required',
             'founded' => 'required|integer|min:0|max:2022',
             'description' => 'required',
