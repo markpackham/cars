@@ -6,6 +6,9 @@
             <h1 class="text-5xl uppercase bold">
                 Update car
             </h1>
+            <p>
+                <a href="/cars">Return Home</a>
+            </p>
         </div>
     </div>
 
@@ -14,6 +17,7 @@
             @csrf
             @method('PUT')
             <div class="block">
+
                 <input type="text" class="block shadow-5xl mb-10 p-2 w-80 italic placeholder-gray-400" name="name"
                     value="{{ $car->name }}">
 
@@ -22,6 +26,9 @@
 
                 <input type="text" class="block shadow-5xl mb-10 p-2 w-80 italic placeholder-gray-400" name="description"
                     value="{{ $car->description }}">
+
+                <input type="text" class="block shadow-5xl mb-10 p-2 w-80 italic placeholder-gray-400" name="image"
+                    value="{{ $car->image_path }}">
 
                 <button type="submit" class="bg-green-500 block shadow-5xl mb-10 p-2 w-80 uppercase font-bold">
                     Submit

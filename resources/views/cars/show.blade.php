@@ -7,6 +7,9 @@
             <h1 class="text-5xl uppercase bold">
                 {{ $car->name }}
             </h1>
+            <p>
+                <a href="/cars">Return Home</a>
+            </p>
         </div>
 
         <div class="py-10 text-center">
