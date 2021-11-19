@@ -11,6 +11,13 @@ use App\Http\Requests\CreateValidationRequest;
 class CarsController extends Controller
 {
 
+    // use middleware to restrict which pages a non logged in user sees
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => ['index', 'show']]);
+    }
+
+
     // Redirect anyone who visits the root to the cars homepage
     public function homeRedirect()
     {
