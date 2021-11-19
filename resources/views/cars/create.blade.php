@@ -6,6 +6,9 @@
             <h1 class="text-5xl uppercase bold">
                 Create car
             </h1>
+            <p>
+                <a href="/cars">Return Home</a>
+            </p>
         </div>
     </div>
 
@@ -30,5 +33,12 @@
                 </button>
             </div>
         </form>
+        @if ($errors->any())
+            <div class="w-4/8 m-auto text-center">
+                @foreach ($errors->all() as $error)
+                    <li class="text-red-500 list-none">{{ $error }}</li>
+                @endforeach
+            </div>
+        @endif
     </div>
 @endsection
