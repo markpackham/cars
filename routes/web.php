@@ -17,3 +17,7 @@ use App\Http\Controllers\CarsController;
 Route::get('/', [CarsController::class, 'homeRedirect']);
 
 Route::resource('/cars', CarsController::class);
+Auth::routes();
+
+Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
+

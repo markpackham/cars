@@ -27,9 +27,6 @@
                 <input type="text" class="block shadow-5xl mb-10 p-2 w-80 italic placeholder-gray-400" name="description"
                     value="{{ $car->description }}">
 
-                <input type="text" class="block shadow-5xl mb-10 p-2 w-80 italic placeholder-gray-400" name="image"
-                    value="{{ $car->image_path }}">
-
                 <button type="submit" class="bg-green-500 block shadow-5xl mb-10 p-2 w-80 uppercase font-bold">
                     Submit
                 </button>

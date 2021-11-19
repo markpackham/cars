@@ -141,7 +141,6 @@ class CarsController extends Controller
             'name' => $request->input('name'),
             'founded' => $request->input('founded'),
             'description' => $request->input('description'),
-            'image_path' => $request->input('image'),
         ]);
 
         return redirect('/cars');
