@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 19, 2021 at 03:27 PM
+-- Generation Time: Nov 19, 2021 at 03:31 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -43,10 +43,10 @@ CREATE TABLE `cars` (
 --
 
 INSERT INTO `cars` (`id`, `name`, `founded`, `description`, `created_at`, `updated_at`, `image_path`, `user_id`) VALUES
-(1, 'Audi', 1908, 'I don\'t know many cars', '2021-11-18 12:02:38', '2021-11-18 12:02:38', 'meow', 0),
-(2, 'Ford', 1950, 'Ford that goes broom broom', NULL, NULL, 'meow', 0),
-(3, 'Honda', 1927, 'Now the sumo wrestler from Street Fighter 2', NULL, NULL, 'meow', 0),
-(4, 'Test Car', 2021, 'This is a test post', '2021-11-19 13:25:11', '2021-11-19 13:25:11', '1637328311-Test Car.png', 0),
+(1, 'Audi', 1908, 'I don\'t know many cars', '2021-11-18 12:02:38', '2021-11-18 12:02:38', 'meow', 1),
+(2, 'Ford', 1950, 'Ford that goes broom broom', NULL, NULL, 'meow', 1),
+(3, 'Honda', 1927, 'Now the sumo wrestler from Street Fighter 2', NULL, NULL, 'meow', 1),
+(4, 'Test Car', 2021, 'This is a test post', '2021-11-19 13:25:11', '2021-11-19 13:25:11', '1637328311-Test Car.png', 1),
 (5, 'Cary Von Car', 1987, 'I know next to nothing about cars.', '2021-11-19 14:26:39', '2021-11-19 14:26:39', '1637331999-Cary Von Car.png', 1);
 
 -- --------------------------------------------------------
