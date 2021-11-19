@@ -8,15 +8,17 @@
             </h1>
         </div>
 
-        <div class="pt-10">
-            <a href="cars/create" class="border-b-2 pb-2 border-dotted italic text-gray-500">
-                Add a new car &rarr;
-            </a>
-        </div>
-
-        <p class="py-12 italic">
-            Please login to add a new car.
-        </p>
+        @if (Auth::user())
+            <div class="pt-10">
+                <a href="cars/create" class="border-b-2 pb-2 border-dotted italic text-gray-500">
+                    Add a new car &rarr;
+                </a>
+            </div>
+        @else
+            <p class="py-12 italic">
+                Please login to add a new car. Login name: "admin", password is "password".
+            </p>
+        @endif
 
         <div class="w-5/6 py-10">
             @foreach ($cars as $car)
