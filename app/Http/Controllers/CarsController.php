@@ -54,7 +54,28 @@ class CarsController extends Controller
     public function store(CreateValidationRequest $request)
     {
 
+        // Methods we can use on the request for images
+        // show us the extention eg "jpg"
+        // guessExtension()
+        // eg "image/jpeg"
+        // getMimeType()
+        // getClientMimeType()
+        // store()
+        // asStore()
+        // storePublicly()
+        // move()
+        // getClientOriginalName()
+        // get filename without the . so just "jpg"
+        // guessClientExtention()
+        // get size of image in kilobytes
+        // getSize()
+        // getError()
+        // isValid()
+
         $request->validated();
+
+        // avoid duplicate image names uploaded
+        $newImageName = time() . '-' . $request->name . '.' . $request->image->extension();
 
         // $request->validate([
         //     'name' => 'required|unique:cars',
