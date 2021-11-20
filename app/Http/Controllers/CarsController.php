@@ -83,9 +83,13 @@ class CarsController extends Controller
         $request->validated();
 
         // avoid duplicate image names uploaded
-        $newImageName = time() . '-' . $request->name . '.' . $request->image->extension();
+        if (isset($request->image)) {
+            $newImageName = time() . '-' . $request->name . '.' . $request->image->extension();
+            $request->image->move(public_path('images'), $newImageName);
+        } else {
+            $newImageName = time() . '-' . 'NoImage';
+        }
 
-        $request->image->move(public_path('images'), $newImageName);
 
         // $request->validate([
         //     'name' => 'required|unique:cars',
