@@ -79,6 +79,7 @@ class CarsController extends Controller
         // getError()
         // isValid()
 
+        trim($request->name);
         $request->validated();
 
         // avoid duplicate image names uploaded

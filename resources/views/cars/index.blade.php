@@ -16,7 +16,7 @@
             </div>
         @else
             <p class="py-12 italic">
-                Please login to add a new car. Login name: "admin", password is "password".
+                Please login to add a new car. Login email: "admin@adminemail.com", password is "password".
             </p>
         @endif
 
